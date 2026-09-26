@@ -1,17 +1,13 @@
-[  {
+[
+  {
     "kernelSource": {
-      "name": "MikasaNethunter",
-      "repo": "https://github.com/noophyy/mikasa_kernel_realme2_c1.git",
-      "branch": "Light",
-      "device": "mikasa"
+      "name": "EvolutionX-KVM",
+      "repo": "https://github.com",
+      "branch": "lineage-21",
+      "device": "gta4xlve"
     },
     "withKernelSU": false,
     "toolchains": [
-      {
-        "repo": "https://android.googlesource.com/platform/prebuilts/gas/linux-x86",
-        "branch": "master",
-        "name": "gas"
-      },
       {
         "repo": "https://github.com/kdrag0n/proton-clang.git",
         "branch": "master",
@@ -21,18 +17,12 @@
     "params": {
       "ARCH": "arm64",
       "CROSS_COMPILE": "aarch64-linux-gnu-",
-      "CROSS_COMPILE_ARM32": "arm-linux-gnueabi-",
       "CROSS_COMPILE_COMPAT": "arm-linux-gnueabi-",
-      "CLANG_TRIPLE": "aarch64-linux-gnu-",
-      "AR": "llvm-ar",
-      "OBJDUMP": "llvm-objdump",
-      "STRIP": "llvm-strip",
-      "OBJCOPY": "llvm-objcopy",
-      "NM": "llvm-nm",
       "CC": "clang"
     },
     "extraParams": {
-      "KEEP": ""
+      "DEFCONFIG": "gta4xlve_defconfig",
+      "POST_DEFCONFIG_COMMAND": "echo 'CONFIG_KVM=y' >> arch/arm64/configs/gta4xlve_defconfig && echo 'CONFIG_VIRTUALIZATION=y' >> arch/arm64/configs/gta4xlve_defconfig"
     }
   }
 ]
